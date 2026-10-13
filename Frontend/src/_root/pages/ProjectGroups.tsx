@@ -57,7 +57,7 @@ type status = {
           const formData = new FormData();
           formData.append('erp',localStorage.getItem('erp')||"0");
           try {
-            const response = await axios.post('http://localhost:8080/courses/enrolled', formData, {
+            const response = await axios.post('/courses/enrolled', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -73,7 +73,7 @@ type status = {
         const formData = new FormData();
           formData.append('erp',localStorage.getItem('erp')||"0");
           try {
-            const response = await axios.post('http://localhost:8080/project/user', formData, {
+            const response = await axios.post('/project/user', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -89,7 +89,7 @@ type status = {
         const formData = new FormData();
           formData.append('erp',localStorage.getItem('erp')||"0");
           try {
-            const response = await axios.post('http://localhost:8080/project/search', formData, {
+            const response = await axios.post('/project/search', formData, {
               headers: {
                 'Content-Type': 'multipart/form-data',
               },
@@ -161,7 +161,7 @@ type status = {
         url = 'join/student/group'
     }
   try {
-    const response = await axios.post('http://localhost:8080/'+url, formData, {
+    const response = await axios.post('/'+url, formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -185,7 +185,7 @@ type status = {
     const formData = new FormData();
         formData.append('id',id.toString());
         try {
-          const response = await axios.post('http://localhost:8080/project/students', formData, {
+          const response = await axios.post('/project/students', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },

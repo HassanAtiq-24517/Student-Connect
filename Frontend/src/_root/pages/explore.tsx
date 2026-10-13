@@ -59,7 +59,7 @@ const Explore = () => {
             const formData = new FormData();
             formData.append('erp',localStorage.getItem('erp')||"0");
             try {
-              const response = await axios.post('http://localhost:8080/courses/mentor', formData, {
+              const response = await axios.post('/courses/mentor', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },
@@ -74,7 +74,7 @@ const Explore = () => {
             const formData = new FormData();
             formData.append('erp',localStorage.getItem('erp')||"0");
             try {
-              const response = await axios.post('http://localhost:8080/learning/search', formData, {
+              const response = await axios.post('/learning/search', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },
@@ -91,7 +91,7 @@ const Explore = () => {
             const formData = new FormData();
             formData.append('erp',localStorage.getItem('erp')||"0");
             try {
-              const response = await axios.post('http://localhost:8080/learning/mentor', formData, {
+              const response = await axios.post('/learning/mentor', formData, {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },
@@ -157,7 +157,7 @@ const Explore = () => {
         const formData = new FormData();
         formData.append('erp',erp.toString());
         try {
-          const response = await axios.post('http://localhost:8080/student/info', formData, {
+          const response = await axios.post('/student/info', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -268,7 +268,7 @@ const Explore = () => {
             formData.append('erp',localStorage.getItem('erp')||"0")
         }
       try {
-        const response = await axios.post('http://localhost:8080/'+url, formData, {
+        const response = await axios.post('/'+url, formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },

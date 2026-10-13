@@ -32,7 +32,7 @@ type ProjectFormProps = {
   action: "Create" | "Update";
 };
 
-function ProjectForm({ id, course_code, name,size, action }: ProjectFormProps) {
+function ProjectForm({ course_code, name, size, action }: ProjectFormProps) {
     const navigate = useNavigate();
     const { toast } = useToast();
 
@@ -51,7 +51,7 @@ function ProjectForm({ id, course_code, name,size, action }: ProjectFormProps) {
             const formData = new FormData();
             formData.append('erp', localStorage.getItem('erp') || "0");
             try {
-                const response = await axios.post('http://localhost:8080/courses/enrolled', formData, {
+                const response = await axios.post('/courses/enrolled', formData, {
                     headers: {
                         'Content-Type': 'multipart/form-data',
                     },
@@ -97,7 +97,7 @@ function ProjectForm({ id, course_code, name,size, action }: ProjectFormProps) {
         formData.append('size', value.size);
 
         try {
-            const response = await axios.post('http://localhost:8080/project/create', formData, {
+            const response = await axios.post('/project/create', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

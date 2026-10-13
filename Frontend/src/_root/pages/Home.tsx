@@ -72,7 +72,7 @@ const Home = () => {
         const formData = new FormData();
         formData.append('erp',localStorage.getItem('erp')||"0");
         try {
-          const response = await axios.post('http://localhost:8080/courses/enrolled', formData, {
+          const response = await axios.post('/courses/enrolled', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -88,7 +88,7 @@ const Home = () => {
       const formData = new FormData();
       formData.append('erp',localStorage.getItem('erp')||"0");
       try {
-        const response = await axios.post('http://localhost:8080/learning/user', formData, {
+        const response = await axios.post('/learning/user', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -105,7 +105,7 @@ const fetchRecords = async () => {
   const formData = new FormData();
   formData.append('erp',localStorage.getItem('erp')||"0");
   try {
-    const response = await axios.post('http://localhost:8080/learning/records', formData, {
+    const response = await axios.post('/learning/records', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -153,7 +153,7 @@ const fetchRecords = async () => {
     const formData = new FormData();
       formData.append('id',id.toString());
       try {
-        const response = await axios.post('http://localhost:8080/learning/delete', formData, {
+        const response = await axios.post('/learning/delete', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -205,7 +205,7 @@ const fetchRecords = async () => {
     formData.append('erp',erp.toString());
     formData.append('courseCode',code)
     try {
-      const response = await axios.post('http://localhost:8080/mentor/info', formData, {
+      const response = await axios.post('/mentor/info', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -30,7 +30,7 @@ const LoginForm = () => {
     formData.append('email',email);
     formData.append('password',password)
     try {
-      const response = await axios.post('http://localhost:8080/login', formData, {
+      const response = await axios.post('/login', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

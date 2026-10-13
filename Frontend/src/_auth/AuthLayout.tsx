@@ -19,7 +19,7 @@ const AuthLayout = () => {
     const formData = new FormData();
     formData.append('token', token)
     try {
-      const response = await axios.post('http://localhost:8080/auth', formData, {
+      const response = await axios.post('/auth', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },

@@ -51,7 +51,7 @@ const PostForm = ({ id, course_code, content, action }: PostFormProps) => {
         const formData = new FormData();
         formData.append('erp',localStorage.getItem('erp')||"0");
         try {
-          const response = await axios.post('http://localhost:8080/courses/enrolled', formData, {
+          const response = await axios.post('/courses/enrolled', formData, {
             headers: {
               'Content-Type': 'multipart/form-data',
             },
@@ -69,7 +69,7 @@ const PostForm = ({ id, course_code, content, action }: PostFormProps) => {
       const formData = new FormData();
       formData.append('erp',localStorage.getItem('erp')||"0");
       try {
-        const response = await axios.post('http://localhost:8080/courses/mentor', formData, {
+        const response = await axios.post('/courses/mentor', formData, {
           headers: {
             'Content-Type': 'multipart/form-data',
           },
@@ -134,7 +134,7 @@ const PostForm = ({ id, course_code, content, action }: PostFormProps) => {
       
   
     try {
-      const response = await axios.post('http://localhost:8080/learning/'+endpoint, formData, {
+      const response = await axios.post('/learning/'+endpoint, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
